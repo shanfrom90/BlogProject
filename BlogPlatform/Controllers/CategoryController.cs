@@ -11,7 +11,7 @@ namespace blog_template_practice.Controllers
     public class CategoryController : Controller
     {
         IRepository<Category> categoryRepo;
-
+        //DI in controller-instantiates repo and passes to controller
         public CategoryController(IRepository<Category> categoryRepo)
         {
             this.categoryRepo = categoryRepo;

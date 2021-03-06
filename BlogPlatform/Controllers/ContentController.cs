@@ -76,6 +76,7 @@ namespace blog_template_practice.Controllers
         public ActionResult Delete(Content model)
         {
             contentRepo.Delete(model);
+             
             return RedirectToAction("Index");
         }
 
