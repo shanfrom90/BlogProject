@@ -25,5 +25,8 @@ namespace blog_template_practice.Models
             PublishDate = publishDate;
         }
 
+        public Content()
+        {
+        }
     }
 }
