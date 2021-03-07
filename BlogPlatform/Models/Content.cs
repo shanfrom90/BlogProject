@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 namespace blog_template_practice.Models
 {
     public class Content
+
     {
         public int Id { get; set; }
         public string Title { get; set; }
@@ -28,5 +29,6 @@ namespace blog_template_practice.Models
         public Content()
         {
         }
+
     }
 }
