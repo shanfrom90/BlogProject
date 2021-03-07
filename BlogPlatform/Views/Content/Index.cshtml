@@ -7,20 +7,29 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Journable | All Posts</title>
-    <link rel="stylesheet" type="text/css" href="~/Styles/StyleSheet.css" />
+    <link rel="stylesheet" type="text/css" href="~/Styles/StyleSheet.css" />.
 </head>
 <body>
-   
 
-    <h1>All Journable Posts</h1>
-    <div>
-        @foreach (var post in Model)
-        {
-            <h2>Title: <a href="/Content/Details/@post.Id">@post.Title</a></h2>
-            <p>Posted By:@post.Author</p>
-       
-        }
-    </div>
-    </body>
+    <nav>
+        <ul>
+            <li><a href="/Category/">Journable Home Page</a></li>
+            <li><a href="/Content/">All Journable Posts</a></li>
+            <li><a href="/Content/Create">Submit Post</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>All Journable Posts</h1>
+        <div>
+            @foreach (var post in Model)
+            {
+                <h2>Title: <a href="/Content/Details/@post.Id">@post.Title</a> </h2>
+                <p><a href="/Content/Update/@post.Id">Edit Post</a> | <a href="/Content/Delete/@post.Id">Delete Post</a></p>
+                <p>Posted By:@post.Author</p>
+
+            }
+        </div>
+    </main>
+</body>
     </html>
 

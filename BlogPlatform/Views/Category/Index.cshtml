@@ -13,24 +13,25 @@
 <body>
     <nav>
         <ul>
-            <li><a href="/Category/">Home Page</a></li>
+            <li><a href="/Category/">Journable Home Page</a></li>
             <li><a href="/Content/">All Journable Posts</a></li>
             <li><a href="/Content/Create">Submit Post</a></li>
         </ul>
     </nav>
 
-    <header>Journable</header>
+    <main>
+    <header><h1>Journable</h1></header>
     <p>Making it easy for you to quickly jot down, organize, and share your thoughts</p>
     <hr />
-
-    <h1>Journable Categories</h1>
+    <h2>Journable Categories</h2>
     @foreach (var category in Model)
-    { 
-      <h2><a href="/Category/Details/@category.Id">@category.Name</a></h2>
-      <hr />
+    {
+        <h3><a href="/Category/Details/@category.Id">@category.Name</a></h3>
+       
     }
-
+    <hr />
     <h2><a href="/Content/">View All Posts</a></h2>
+    </main>
 </body>
 </html>
 

@@ -1,0 +1,39 @@
+﻿*{
+    padding:0;
+    margin: 0;
+    font-family:   Helvetica, sans-serif;
+    box-sizing: border-box;
+    line-height: 1.618em;
+
+}
+body {
+    background-color: gray;
+}
+
+nav{
+    background:#4cff00;
+    position: fixed;
+    display: flex;
+}
+
+nav a{
+    padding: .5em 2em;
+    text-decoration: none;
+    color: #ffff;
+    font-weight: bold;
+    font-size: 18px;
+
+}
+
+nav a:hover{
+    background: #316be2
+}
+
+h1, h2, h3, p {
+    text-align: center;
+    padding-left: 30%;
+    padding-right: 30%;
+    margin: 5px;
+}
+
+ 

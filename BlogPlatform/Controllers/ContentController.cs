@@ -64,6 +64,7 @@ namespace blog_template_practice.Controllers
         {
             SetupCategoryViewBag();
             contentRepo.Update(model);
+            ViewBag.Result = "You have successfully updated this post";
             return RedirectToAction("Index");
         }
 
@@ -78,14 +79,14 @@ namespace blog_template_practice.Controllers
         public ActionResult Delete(Content model)
         {
             contentRepo.Delete(model);
-             
+
             return RedirectToAction("Index");
         }
 
         private void SetupCategoryViewBag()
         {
             var categories = contentRepo.PopulateCategoryList();
-            ViewBag.Categories = new SelectList(categories, "Id", "Name");
+            ViewBag.Categories = categories;
         }
     }
 }
