@@ -15,19 +15,9 @@ namespace blog_template_practice.Models
             Id = id;
             Name = name;
         }
-
-    {
-        public string Name { get; set; }
-        public int Id { get; set; }
-
-        public virtual ICollection<Content> Contents { get; set; }
-
-
-
-        public Category (int id, string name)
+       public Category()
         {
-            Id = id;
-            Name = name;
+
         }
 
     }

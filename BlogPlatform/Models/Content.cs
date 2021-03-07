@@ -13,6 +13,8 @@ namespace blog_template_practice.Models
         public string Body { get; set; }
         public string PublishDate { get; set; }
         public string Author { get; set; }
+
+        //establishes many to one relationship with category --content is the dependent entity 
         public virtual Category Category { get; set; }
         //may need to add Display Annotation-select Category
         public int CategoryId { get; set; }

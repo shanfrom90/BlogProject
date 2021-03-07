@@ -32,8 +32,9 @@ namespace blog_template_practice.Controllers
 
         public ViewResult Create()
         {
+            SetupCategoryViewBag();
 
-            return View();
+             return View(new Content());
         }
 
         [HttpPost]
@@ -41,6 +42,7 @@ namespace blog_template_practice.Controllers
         {
             SetupCategoryViewBag();
             contentRepo.Create(model);
+            ViewBag.Result = "Your post has been submitted.";
             return RedirectToAction("Index");
         }
 
@@ -83,7 +85,7 @@ namespace blog_template_practice.Controllers
         private void SetupCategoryViewBag()
         {
             var categories = contentRepo.PopulateCategoryList();
-            ViewBag.Categories = categories;
+            ViewBag.Categories = new SelectList(categories, "Id", "Name");
         }
     }
 }
