@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BlogPlatform.Migrations
 {
-    public partial class Initial : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -27,7 +28,7 @@ namespace BlogPlatform.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(nullable: true),
                     Body = table.Column<string>(nullable: true),
-                    PublishDate = table.Column<string>(nullable: true),
+                    PublishDate = table.Column<DateTime>(nullable: false),
                     Author = table.Column<string>(nullable: true),
                     CategoryId = table.Column<int>(nullable: false)
                 },
@@ -62,12 +63,12 @@ namespace BlogPlatform.Migrations
                 columns: new[] { "Id", "Author", "Body", "CategoryId", "PublishDate", "Title" },
                 values: new object[,]
                 {
-                    { 3, "Shannon", "My cat, my mom, my sister, WCCI, a warm place to sleep", 1, "1/31/2021", "Gratitute List" },
-                    { 6, "BP", "Whether you are experienced with yoga or brand new, Yoga With Adriene on YouTube is a dream come true. Namaste!", 1, "12/05/2020", "Yoga With Adriene" },
-                    { 2, "JP", "I can't believe this only have 5 ingredients! For best results roast the red peppers yourself. You can put this sauce on anything and everything!", 2, "2/12/2021", "Roasted Red Pepper Sauce" },
-                    { 5, "Mary", "So easy and delicious! The perfect vegetarian weeknight meal. Tip: Keep fresh basil out of the fridge as it is cold-sensitive.", 2, "03/02/2021", "Creamy Instant Pot Pasta" },
-                    { 1, "Shannon", "I want to visit my family in Cincinnati first, and then plan a trip out west, hopefully to Arizona and/or New Mexico", 3, "3/6/2021", "Once I am Vaccinated" },
-                    { 4, "Shannon", "I'm going on an 8+ mile hike.", 3, "01/01/2021", "When Winter Is Over" }
+                    { 3, "Shannon", "My cat, my mom, my sister, WCCI, a warm place to sleep", 1, new DateTime(2021, 3, 8, 22, 29, 47, 421, DateTimeKind.Local).AddTicks(2279), "Gratitute List" },
+                    { 6, "BP", "Whether you are experienced with yoga or brand new, Yoga With Adriene on YouTube is a dream come true. Namaste!", 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Yoga With Adriene" },
+                    { 2, "JP", "I can't believe this only have 5 ingredients! For best results roast the red peppers yourself. You can put this sauce on anything and everything!", 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Roasted Red Pepper Sauce" },
+                    { 5, "Mary", "So easy and delicious! The perfect vegetarian weeknight meal. Tip: Keep fresh basil out of the fridge as it is cold-sensitive.", 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Creamy Instant Pot Pasta" },
+                    { 1, "Shannon", "I want to visit my family in Cincinnati first, and then plan a trip out west, hopefully to Arizona and/or New Mexico", 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Once I am Vaccinated" },
+                    { 4, "Shannon", "I'm going on an 8+ mile hike.", 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "When Winter Is Over" }
                 });
 
             migrationBuilder.CreateIndex(

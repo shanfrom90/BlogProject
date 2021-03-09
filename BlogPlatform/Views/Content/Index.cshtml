@@ -1,7 +1,31 @@
-﻿@model  IEnumerable<blog_template_practice.Models.Content> 
-@{
-    Layout = null;
-}
+﻿@model IEnumerable<blog_template_practice.Models.Content>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Journable | All Posts</title>
+    <link rel="stylesheet" type="text/css" href="~/Styles/StyleSheet.css" />.
+</head>
+<body>
+        <nav>
+            <ul>
+                <li><a href="/Content/">Journable Home Page</a></li>
+                <li><a href="/Category/">Journable Categories</a></li>
+                <li><a href="/Content/Create">Submit Post</a></li>
+            </ul>
+        </nav>
+    <header>
+    <h1>All Journable Posts</h1>
+    </header>
+    <main>
+        @foreach (var post in Model)
+        {
+            <h2><a href="/Content/Details/@post.Id">@post.Title</a></h2>
+            <h4><a href="/Cateogry/Details/@post.CategoryId">@post.CategoryId</a></h4>
+            <p>@post.Author.</p>
+            <p>@post.PublishDate</p>
+        }
+    </main>
+</body>
+    </html>
 
-<h1>All Journable Posts</h1>
- 

@@ -2,5 +2,31 @@
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@{
-}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Journable | @Model.Title</title>
+    <link rel="stylesheet" type="text/css" href="~/Styles/StyleSheet.css" />
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/Category/">Journable Home Page</a></li>
+            <li><a href="/Content/">All Journable Posts</a></li>
+            <li><a href="/Content/Create">Submit Post</a></li>
+        </ul>
+    </nav>
+    
+    <header><h1>@Model.Title</h1></header>
+    <main>
+        <h3>Category: <a href="/Category/Details/@Model.CategoryId">@Model.Category.Name</a></h3>
+        <p>Posted By: @Model.Author</p>
+        <p>Posted: @Model.PublishDate</p>
+        <p>@Model.Body</p>
+        <p><a href="/Content/Update/@Model.Id">Update Post</a> | <a href="/Content/Delete/@Model.Id">Delete Post</a></p> 
+    </main>
+</body>
+</html>

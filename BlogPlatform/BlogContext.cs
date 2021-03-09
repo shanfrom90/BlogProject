@@ -14,7 +14,7 @@ namespace blog_template_practice
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionString = "Server=(localdb)\\mssqllocaldb;Database=BlogDB_templatetest;Trusted_Connection=True;";
+            var connectionString = "Server=(localdb)\\mssqllocaldb;Database=BlogDB_template2;Trusted_Connection=True;";
 
             optionsBuilder.UseSqlServer(connectionString)
                 .UseLazyLoadingProxies();
@@ -54,7 +54,6 @@ namespace blog_template_practice
                     Body = "I want to visit my family in Cincinnati first, and then plan a trip out west, hopefully to Arizona and/or New Mexico",
                     Author = "Shannon",
                     Id = 1,
-                    PublishDate = "3/6/2021"
 
                 },
                 new Content
@@ -64,7 +63,6 @@ namespace blog_template_practice
                     Body = "I can't believe this only have 5 ingredients! For best results roast the red peppers yourself. You can put this sauce on anything and everything!",
                     Author = "JP",
                     Id = 2,
-                    PublishDate = "2/12/2021"
 
 
                 },
@@ -75,7 +73,7 @@ namespace blog_template_practice
                     Body = "My cat, my mom, my sister, WCCI, a warm place to sleep",
                     Author = "Shannon",
                     Id = 3,
-                    PublishDate = "1/31/2021"
+                    PublishDate = DateTime.Now
                 },
                 new Content
                 {
@@ -84,7 +82,6 @@ namespace blog_template_practice
                     Body = "I'm going on an 8+ mile hike.",
                     Author = "Shannon",
                     Id = 4,
-                    PublishDate = "01/01/2021"
 
                 },
                 new Content
@@ -94,7 +91,6 @@ namespace blog_template_practice
                     Body = "So easy and delicious! The perfect vegetarian weeknight meal. Tip: Keep fresh basil out of the fridge as it is cold-sensitive.",
                     Author = "Mary",
                     Id = 5,
-                    PublishDate = "03/02/2021"
 
                 },
                 new Content
@@ -104,7 +100,6 @@ namespace blog_template_practice
                     Body = "Whether you are experienced with yoga or brand new, Yoga With Adriene on YouTube is a dream come true. Namaste!",
                     Author = "BP",
                     Id = 6,
-                    PublishDate = "12/05/2020"
                 }
                 );
 

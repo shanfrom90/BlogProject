@@ -50,12 +50,12 @@ namespace blog_template_practice.Tests
         [Fact]
         public void Details_Passes_Category_To_View()
         {
-            //var expectedCategory = new Category();
-            //categoryRepo.GetById(1).Returns(expectedCategory);
+            var expectedCategory = new Category();
+            categoryRepo.GetById(1).Returns(expectedCategory);
 
-            //var result = sut.Details(1);
+            var result = sut.Details(1);
 
-            //Assert.Equal(expectedCategory, result.Model);
+            Assert.Equal(expectedCategory, result.Model);
         }
     }
 }

@@ -2,6 +2,37 @@
 @{
     Layout = null;
 }
+<!DOCTYPE html>
 
-<h1>Blog Categories</h1>
- 
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Journable | Home</title>
+    <link rel="stylesheet" type="text/css" href="~/Styles/StyleSheet.css" />
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/Category/">Journable Home Page</a></li>
+            <li><a href="/Content/">All Journable Posts</a></li>
+            <li><a href="/Content/Create">Submit Post</a></li>
+        </ul>
+    </nav>
+
+    <header><h1>Journable</h1></header>
+    <p>Making it easy for you to quickly jot down, organize, and share your thoughts</p>
+
+    <main>
+    <hr />
+    <h2>Journable Categories</h2>
+    @foreach (var category in Model)
+    {
+        <h3><a href="/Category/Details/@category.Id">@category.Name</a></h3>
+       
+    }
+    <hr />
+    <h2><a href="/Content/">View All Posts</a></h2>
+    </main>
+</body>
+</html>
+
