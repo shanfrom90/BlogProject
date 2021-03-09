@@ -20,12 +20,13 @@
         </ul>
     </nav>
     
-    <h1>@Model.Title</h1>
+    <header><h1>@Model.Title</h1></header>
     <main>
         <h3>Category: <a href="/Category/Details/@Model.CategoryId">@Model.Category.Name</a></h3>
         <p>Posted By: @Model.Author</p>
         <p>Posted: @Model.PublishDate</p>
         <p>@Model.Body</p>
+        <p><a href="/Content/Update/@Model.Id">Update Post</a> | <a href="/Content/Delete/@Model.Id">Delete Post</a></p> 
     </main>
 </body>
 </html>

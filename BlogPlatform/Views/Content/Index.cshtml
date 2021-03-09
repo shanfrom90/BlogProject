@@ -1,7 +1,4 @@
 ﻿@model IEnumerable<blog_template_practice.Models.Content>
-@{ 
-    Layout = null;
-}
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,25 +7,24 @@
     <link rel="stylesheet" type="text/css" href="~/Styles/StyleSheet.css" />.
 </head>
 <body>
-
-    <nav>
-        <ul>
-            <li><a href="/Category/">Journable Home Page</a></li>
-            <li><a href="/Content/">All Journable Posts</a></li>
-            <li><a href="/Content/Create">Submit Post</a></li>
-        </ul>
-    </nav>
+        <nav>
+            <ul>
+                <li><a href="/Content/">Journable Home Page</a></li>
+                <li><a href="/Category/">Journable Categories</a></li>
+                <li><a href="/Content/Create">Submit Post</a></li>
+            </ul>
+        </nav>
+    <header>
+    <h1>All Journable Posts</h1>
+    </header>
     <main>
-        <h1>All Journable Posts</h1>
-        <div>
-            @foreach (var post in Model)
-            {
-                <h2>Title: <a href="/Content/Details/@post.Id">@post.Title</a> </h2>
-                <p><a href="/Content/Update/@post.Id">Edit Post</a> | <a href="/Content/Delete/@post.Id">Delete Post</a></p>
-                <p>Posted By:@post.Author</p>
-
-            }
-        </div>
+        @foreach (var post in Model)
+        {
+            <h2><a href="/Content/Details/@post.Id">@post.Title</a></h2>
+            <h4><a href="/Cateogry/Details/@post.CategoryId">@post.CategoryId</a></h4>
+            <p>@post.Author.</p>
+            <p>@post.PublishDate</p>
+        }
     </main>
 </body>
     </html>

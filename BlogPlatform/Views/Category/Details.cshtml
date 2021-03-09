@@ -19,16 +19,9 @@
             <li><a href="/Content/Create">Submit Post</a></li>
         </ul>
     </nav>
-    <h1>@Model.Name Posts</h1>
+    <h1> </h1>
     <main>
-        @foreach (var post in Model.Contents)
-        {
-            <hr />
-            <h3>@post.Title</h3>
-            <p>@post.Body</p>
-            <p>@post.Author</p>
-            <p>@post.PublishDate</p>
-        }
+       
         <p><a href="/Category/">Back to Journable Home Page</a></p>
     </main>
 </body>

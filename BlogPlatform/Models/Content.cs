@@ -13,7 +13,7 @@ namespace blog_template_practice.Models
         public string Title { get; set; }
         public string Body { get; set; }
         [Display(Name ="Date:")]
-        public string PublishDate { get; set; }
+        public DateTime PublishDate { get; set; }
         [Display(Name ="Username")]
         public string Author { get; set; }
 
@@ -24,13 +24,12 @@ namespace blog_template_practice.Models
 
         public int CategoryId { get; set; }
 
-        public Content(int id, string title, string body, string author, string publishDate)
+        public Content(int id, string title, string body, string author)
         {
             Id = id;
             Title = title;
             Body = body;
             Author = author;
-            PublishDate = publishDate;
         }
 
         public Content()
