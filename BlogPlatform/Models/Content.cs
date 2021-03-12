@@ -24,12 +24,21 @@ namespace blog_template_practice.Models
 
         public int CategoryId { get; set; }
 
-        public Content(int id, string title, string body, string author)
+        public Content(int id, string title, string body, string author, DateTime publishDate)
         {
             Id = id;
             Title = title;
             Body = body;
             Author = author;
+            PublishDate = publishDate;
+        }
+        public Content(int id, string title, string body, string author, string publishDate)
+        {
+            Id = id;
+            Title = title;
+            Body = body;
+            Author = author;
+            PublishDate = DateTime.Parse(publishDate);
         }
 
         public Content()

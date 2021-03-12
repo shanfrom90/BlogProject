@@ -41,9 +41,9 @@ namespace blog_template_practice.Controllers
         public ActionResult Create(Content model)
         {
             SetupCategoryViewBag();
+            model.PublishDate = DateTime.Now;
             contentRepo.Create(model);
             ViewBag.Result = "Your post has been submitted.";
-            model.PublishDate = DateTime.Now;
             return RedirectToAction("Index");
         }
 
@@ -64,8 +64,9 @@ namespace blog_template_practice.Controllers
         public ActionResult Update(Content model)
         {
             SetupCategoryViewBag();
-            contentRepo.Update(model);
             model.PublishDate = DateTime.Now;
+
+            contentRepo.Update(model);
             ViewBag.Result = "You have successfully updated this post";
             return RedirectToAction("Index");
         }
@@ -80,6 +81,7 @@ namespace blog_template_practice.Controllers
         [HttpPost]
         public ActionResult Delete(Content model)
         {
+            SetupCategoryViewBag();
             contentRepo.Delete(model);
 
             return RedirectToAction("Index");

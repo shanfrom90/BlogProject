@@ -1,4 +1,5 @@
 ﻿@model blog_template_practice.Models.Category
+
 @{
     Layout = null;
 }
@@ -8,21 +9,32 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Posts by Category</title>
+    <title>Journable | Posts by Category</title>
     <link rel="stylesheet" type="text/css" href="~/Styles/StyleSheet.css" />
+
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="/Category/">Journable Home Page</a></li>
-            <li><a href="/Content/">All Journable Posts</a></li>
+            <li><a href="/Content/">Journable Home Page</a></li>
+            <li><a href="/Category/">Journable Categories</a></li>
             <li><a href="/Content/Create">Submit Post</a></li>
         </ul>
     </nav>
-    <h1> </h1>
+
+    <header><h2>@Model.Name Posts</h2></header>
     <main>
-       
-        <p><a href="/Category/">Back to Journable Home Page</a></p>
+        <div>
+            @foreach (var post in Model.Contents)
+            {
+                <h4><a href="/Content/Details/@post.Id">@post.Title</a></h4>
+                <p>@post.Body</p>
+            <hr />
+            }
+            <p>
+
+            </p>
+        </div>
     </main>
 </body>
 </html>
