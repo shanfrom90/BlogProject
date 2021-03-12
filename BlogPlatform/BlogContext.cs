@@ -14,7 +14,7 @@ namespace blog_template_practice
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionString = "Server=(localdb)\\mssqllocaldb;Database=BlogDB_template2;Trusted_Connection=True;";
+            var connectionString = "Server=(localdb)\\mssqllocaldb;Database=BlogDB;Trusted_Connection=True; MultipleActiveResultSets = true;";
 
             optionsBuilder.UseSqlServer(connectionString)
                 .UseLazyLoadingProxies();
@@ -40,7 +40,7 @@ namespace blog_template_practice
                 }, new Category
                 {
                     Id = 3,
-                    Name = "Plans & Dreams"
+                    Name = "Planning Ahead"
 
                 }
                 );
@@ -54,6 +54,7 @@ namespace blog_template_practice
                     Body = "I want to visit my family in Cincinnati first, and then plan a trip out west, hopefully to Arizona and/or New Mexico",
                     Author = "Shannon",
                     Id = 1,
+                    PublishDate = DateTime.Now
 
                 },
                 new Content
@@ -63,6 +64,7 @@ namespace blog_template_practice
                     Body = "I can't believe this only have 5 ingredients! For best results roast the red peppers yourself. You can put this sauce on anything and everything!",
                     Author = "JP",
                     Id = 2,
+                    PublishDate = DateTime.Now
 
 
                 },
@@ -82,6 +84,7 @@ namespace blog_template_practice
                     Body = "I'm going on an 8+ mile hike.",
                     Author = "Shannon",
                     Id = 4,
+                    PublishDate = DateTime.Now
 
                 },
                 new Content
@@ -91,6 +94,7 @@ namespace blog_template_practice
                     Body = "So easy and delicious! The perfect vegetarian weeknight meal. Tip: Keep fresh basil out of the fridge as it is cold-sensitive.",
                     Author = "Mary",
                     Id = 5,
+                    PublishDate = DateTime.Now
 
                 },
                 new Content
@@ -100,6 +104,7 @@ namespace blog_template_practice
                     Body = "Whether you are experienced with yoga or brand new, Yoga With Adriene on YouTube is a dream come true. Namaste!",
                     Author = "BP",
                     Id = 6,
+                    PublishDate = DateTime.Now
                 }
                 );
 

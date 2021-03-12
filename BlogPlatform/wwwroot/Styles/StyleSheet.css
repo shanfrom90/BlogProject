@@ -3,37 +3,64 @@
     margin: 0;
     font-family:   Helvetica, sans-serif;
     box-sizing: border-box;
-    line-height: 1.618em;
+    line-height: 2em;
 
 }
 body {
-    background-color: gray;
+    background-color: #3f51ab;
+    background-image: url("https://www.transparenttextures.com/patterns/black-felt.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 nav{
-    background:#4cff00;
+    background-color: black;
     position: fixed;
-    display: flex;
+    margin-left: 20px;
+    padding: 5px;
 }
 
-nav a{
-    padding: .5em 2em;
+a:link{
     text-decoration: none;
-    color: #ffff;
+}
+nav a{
+    padding: 1em 1em;
+    text-decoration: none;
+    color: white;
     font-weight: bold;
     font-size: 18px;
 
 }
 
+ul{
+    list-style: none;
+}
 nav a:hover{
-    background: #316be2
+    color: cornflowerblue;
 }
-
-h1, h2, h3, p {
+a{
+    color: darkblue;
+}
+a:hover{
+    opacity: .5;
+ }
+header{
     text-align: center;
-    padding-left: 30%;
-    padding-right: 30%;
-    margin: 5px;
+    color: white;
+    margin-top: 1.5em;
 }
-
+main{
+    text-align: center;
+    background-color: lightgray;
+    line-height: 2em;
+    color: black;
+    border-radius: 15px;
+    max-width: 60%;
+    margin: 0 auto;
+    
+}
+.footer{
+    text-align: center;
+}
  

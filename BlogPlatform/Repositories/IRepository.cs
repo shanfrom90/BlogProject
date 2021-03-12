@@ -16,5 +16,6 @@ namespace blog_template_practice.Repositories
         void Update(T obj);
 
         public List<Category> PopulateCategoryList();
+
     }
 }
