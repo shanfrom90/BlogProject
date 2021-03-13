@@ -1,14 +1,17 @@
-﻿@model IEnumerable<blog_template_practice.Models.Category>
+﻿@model blog_template_practice.Models.Category
+
 @{
     Layout = null;
 }
+
 <!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Journable | Home</title>
+    <title>Journable | Posts by Category</title>
     <link rel="stylesheet" type="text/css" href="~/Styles/StyleSheet.css" />
+
 </head>
 <body>
     <nav>
@@ -19,19 +22,19 @@
         </ul>
     </nav>
 
-    <header>
-        <h1>Journable Categories</h1>
-    </header>
-
+    <header><h2>@Model.Name Posts</h2></header>
     <main>
-        <p>
-            @foreach (var category in Model)
+        <div>
+            @foreach (var post in Model.Contents)
             {
-                <h3><a href="/Category/Details/@category.Id">@category.Name</a></h3>
-
+                <h4><a href="/Content/Details/@post.Id">@post.Title</a></h4>
+                <p>@post.Body</p>
+            <hr />
             }
-        </p>
+            <p>
+
+            </p>
+        </div>
     </main>
 </body>
 </html>
-

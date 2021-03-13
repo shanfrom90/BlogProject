@@ -11,10 +11,22 @@ namespace blog_template_practice.Controllers
     public class CategoryController : Controller
     {
         IRepository<Category> categoryRepo;
-
+        //DI in controller-instantiates repo and passes to controller
         public CategoryController(IRepository<Category> categoryRepo)
         {
             this.categoryRepo = categoryRepo;
+        }
+
+        public ViewResult Index()
+        {
+            var categoryList = categoryRepo.GetAll();
+            return View(categoryList);
+        }
+
+        public ViewResult Details(int id)
+        {
+            var category = categoryRepo.GetById(id);
+            return View(category);
         }
 
     }

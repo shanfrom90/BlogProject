@@ -30,6 +30,8 @@ namespace blog_template_practice
             services.AddDbContext<BlogContext>();
             services.AddScoped<IRepository<Content>, ContentRepository>();
             services.AddScoped<IRepository<Category>, CategoryRepository>();
+            //services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,7 +50,7 @@ namespace blog_template_practice
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Category}/{action=Index}/{id?}");
+                    pattern: "{controller=Content}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
         }
